@@ -11,7 +11,7 @@ console.warn("Service worker from public folder");
 //we are doing cache of network request files
 //we can get it's url by checking the network
 //we have to manually cache (write url manually) index.html and '/'(root file)
-//cache karne ke baad get bhi to karna hota hai !!!!!!!!AAGEED
+
 let cacheData = "appV1";
 this.addEventListener("install", (event) => {
   event.waitUntil(
@@ -24,3 +24,16 @@ this.addEventListener("install", (event) => {
     })
   );
 });
+
+//cache karne ke baad get bhi to karna hota hai !!!!!!!!AAGEED
+//now fetching the cache
+//do whatever you want to do when fetch event is passed
+//responseWith =>kiske saath respond karna hai
+//that match with request
+this.addEventListener('fetch',(event)=>{
+event.respondWith(
+    caches.match(event.request).then((result)=>{
+        return result
+    })
+)
+})
