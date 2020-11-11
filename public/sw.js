@@ -35,14 +35,18 @@ this.addEventListener("fetch", (event) => {
   }
 });
 
+//Now we will work on Push notifications
+//when we allow push notifications
+//when any data comes ,,that is then sent as notification
 
-//now we will add add to home screen option in our app
-//it basically works only with 'https' urls but we can acheive it
-//go to inspect dev tools ==>more tools ==>remote devices==>DEVICE==>port forwading
-//==>put your port number and address as localhost:3000
-//enable porting 'true
-//this will sync android with browser
-//clear all cache once s
-//now will get option to add to home screen
+//steps1.how this works
+//steps2. what is vapid PublicKey (Voluntary APPLICATION server application)
+//steps3. what is applicationServerKey
 
-//WE CAN ALSO INSTALL THIS APP ON WINDOWS OR UBUNTU
+
+//push notifications does not comes on https port it comes on tcp port(socket) like a chat application
+//when anything is updated in database it  will send data quicky
+
+//vapid have two key public key and private key  ,,,it is a type of authentication to check if server is authticated
+
+//thiS VAPID KEY is converted into array or string that is then call as 'ApplicationServerKey'
