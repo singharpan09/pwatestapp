@@ -17,13 +17,18 @@ this.addEventListener("install", (event) => {
 
                                     //Fetching
 this.addEventListener('fetch',(event)=>{
-    //now we are checking first if we are offline
+
     if(!navigator.onLine){
         event.respondWith(
             caches.match(event.request).then((result)=>{
                 if(result){
+                    //we return here cached url
                     return result
                 }
+                    let requestUrl=event.request.clone();
+                    //this gives the url which are not cached
+                    //IT TRIES TO HIT API FOR DATA
+                    return fetch(requestUrl)
             })
         )
     }
@@ -31,11 +36,13 @@ this.addEventListener('fetch',(event)=>{
 })
 
 
-//abhi tak we are using cache always but this is incorrect
-//we need to check when we don't have internet connection
-//and use cache only when no internet avaibale
+//but now all pages are working fine
+//but api resposne is not working(api data not working)
+//api data not working when fetching from cache
+//now we are making api data offline
 
-//steps
-//1.unregister service worker from chrome
-//2.check internet connection before fetching cache page
-//3.check network  with internet and with internet
+//steps1.there is a fetch clone event we will use that
+//step2.fetch clone event for render code and uncached pages(THIS WILL RENDER THE WHOLE PAGE)
+//step3.set api data in local storage
+//step4.fetch data from store in offline mode
+//step5.show offline mode warning to user
