@@ -33,7 +33,12 @@ this.addEventListener("install", (event) => {
 this.addEventListener('fetch',(event)=>{
 event.respondWith(
     caches.match(event.request).then((result)=>{
-        return result
+        if(result){
+            return result
+        }
     })
 )
 })
+
+
+//now basic service worker caching and fetching is done
