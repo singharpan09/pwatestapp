@@ -36,5 +36,13 @@ this.addEventListener("fetch", (event) => {
 });
 
 
-//now we want to run PWA app as native app (like mobile app)
-//first we will make build of the web app
+//now we will add add to home screen option in our app
+//it basically works only with 'https' urls but we can acheive it
+//go to inspect dev tools ==>more tools ==>remote devices==>DEVICE==>port forwading
+//==>put your port number and address as localhost:3000
+//enable porting 'true
+//this will sync android with browser
+//clear all cache once s
+//now will get option to add to home screen
+
+//WE CAN ALSO INSTALL THIS APP ON WINDOWS OR UBUNTU
