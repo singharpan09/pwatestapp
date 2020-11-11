@@ -45,6 +45,3 @@ const Users = () => {
 };
 
 export default Users;
-
-//now it will get cached the hole data
-//but for new data we need to always do hard reload because the data is cached previsouly we need to resolve this

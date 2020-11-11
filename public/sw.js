@@ -1,11 +1,7 @@
 console.warn("Service worker from public folder");
 
 
-//this will only cache the routes that are only present here
-//now new users route is added
-
-//Caching
-
+//caching
 let cacheData = "appV1";
 this.addEventListener("install", (event) => {
   event.waitUntil(
